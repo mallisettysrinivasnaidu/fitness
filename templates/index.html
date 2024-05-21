@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Fitness page</title>
+    <style>
+        .navbar-brand {
+            font-size: 24px;
+        }
+        .navbar-nav .nav-link {
+            font-size: 18px;
+        }
+        .dropdown-menu {
+            font-size: 16px;
+            border-radius: 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .dropdown-item {
+            padding: 8px 16px;
+        }
+        h1 {
+            font-size: 36px;
+            margin-top: 40px;
+        }
+        
+        body {
+            background-image: url("https://img.freepik.com/free-photo/young-fitness-man-studio_7502-5008.jpg?t=st=1712816508~exp=1712820108~hmac=b9bfa1989c85c12e9fce9534db233f2dddcec4da2c5e6d663d246e252e2d1ba0&w=900");
+            background-size: cover;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    </style>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Fitness Tracker</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="notesDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Fitness Gym
+                </a>
+                
+                <div class="dropdown-menu" aria-labelledby="notesDropdown1">
+                    <a class="dropdown-item" href="{{url_for('viewexerciselog')}}">View</a>
+                    <a class="dropdown-item" href="{{url_for('addexercise')}}">Add Exercise</a>
+                </div>
+            </li>
+            <li>
+                <a class="nav-link " href="{{url_for('set_goal')}}" id="" role="button" aria-haspopup="true" aria-expanded="false">
+                    Set Goal
+               </a>
+            </li>
+            <li>
+                <a class="nav-link" href="{{url_for('weight_trend_report')}}" id="" role="button" aria-haspopup="true" aria-expanded="false">
+                    Visualization
+               </a>
+            </li>
+            
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Hello, {{session.get('user')}}</a>
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>  
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+     <center><b>{{ message }}</b></center> 
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+    <div class="sam" style="text-align: center;">
+        <h1 style="color: white;">Welcome to Fitness Tracker</h1>
+        <h1 style="color: red;">"Strength does not come from physical capacity. It comes from an indomitable will." </h1>
+    </div>
+    <!-- Add Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

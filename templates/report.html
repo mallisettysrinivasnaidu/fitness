@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Report</title>
+    <!-- Include CSS and JavaScript libraries for charting -->
+    <!-- Example with Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        canvas {
+            max-width: 800px;
+            height: 700vh;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fitness Report</h1>
+    <div>
+        <!-- Example chart: Bar chart showing exercise durations -->
+        <canvas id="exerciseChart"></canvas>
+    </div>
+    <a href="{{'homepage'}}"><button>Back</button></a>
+
+    <!-- JavaScript for rendering charts -->
+    <script>
+        // Example data for exercise durations
+        var exerciseData = {
+            labels: ["running", "push-ups", "squats", "deadlifts", "cycling"],
+            datasets: [{
+                label: 'Exercise Durations',
+                backgroundColor: 'black'
+
+,
+                bordercolor: 'red',
+                borderWidth: 1,
+                data: [30, 40, 20, 25, 35] // Example durations in minutes
+            }]
+        };
+
+        // Render exercise chart
+        var exerciseCtx = document.getElementById('exerciseChart').getContext('2d');
+        var exerciseChart = new Chart(exerciseCtx, {
+            type: 'bar',
+            data: exerciseData,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

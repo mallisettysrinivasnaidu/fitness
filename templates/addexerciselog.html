@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Exercise Log</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(/static/images/bg1.jpg);
+            background-size: cover;
+            height: 100vh;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.404);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color:hsl(0, 10%, 92%);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #040407;
+            font-weight:500;
+            font-size:30px;
+        }
+        input[type="checkbox"],
+        input[type="number"],
+        input[type="time"],
+        button {
+            margin-bottom: 10px;
+            background-color: #ffffff;
+            border: px solid black;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add Exercise Log</h1>
+    <form action="#" method="POST">
+        <label for="exercise1">
+            <input type="checkbox" id="exercise1" name="exercises[]" value="Exercise 1">
+            Running
+        </label>
+        <label for="duration1">
+            Duration (minutes):
+            <input type="text" id="duration1" name="durations[]">
+        </label>
+        
+        <label for="exercise2">
+            <input type="checkbox" id="exercise2" name="exercises[]" value="Exercise 2">
+            Push-ups
+        </label>
+        <label for="duration2">
+            Duration (minutes):
+            <input type="number" id="duration2" name="durations[]" min="1">
+        </label>
+
+        <label for="exercise3">
+            <input type="checkbox" id="exercise3" name="exercises[]" value="Exercise 3">
+            Squats
+        </label>
+        <label for="duration3">
+            Duration (minutes):
+            <input type="number" id="duration3" name="durations[]" min="1">
+        </label>
+
+        <label for="exercise4">
+            <input type="checkbox" id="exercise4" name="exercises[]" value="Exercise 4">
+            Deadlifts
+        </label>
+        <label for="duration4">
+            Duration (minutes):
+            <input type="number" id="duration4" name="durations[]" min="1">
+        </label>
+
+        <label for="exercise5">
+            <input type="checkbox" id="exercise5" name="exercises[]" value="Exercise 5">
+            Cycling
+        </label>
+        <label for="duration5">
+            Duration (minutes):
+            <input type="number" id="duration5" name="durations[]" min="1">
+        </label>
+
+        <label for="weight">
+            Weight (kg):
+            <input type="number" id="weight" name="weight" min="1" required>
+        </label>
+
+        <label for="check_in_time">
+            Check-in Time:
+            <input type="time" id="check_in_time" name="check_in_time">
+        </label>
+
+        <button type="submit">Submit</button>
+        <a href="{{'homepage'}}"><button>Back</button></a>
+    </form>
+</body>
+</html>

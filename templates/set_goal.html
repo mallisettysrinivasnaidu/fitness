@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Goal</title>
+    <style>
+        body{
+            background-image: url("https://img.freepik.com/free-photo/woman-helping-man-gym_23-2149627073.jpg?t=st=1712825780~exp=1712829380~hmac=6d5dc61208c80f43ba9893942c40ce03fdeb97eb817740bd0d5f0f0271cfe68e&w=900");
+            color: white;
+            background-size: cover;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        select {
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+            width: 200px;
+            margin-bottom: 20px;
+        }
+
+        input[type="number"],
+        input[type="date"],
+        button {
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+            width: 200px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .back-button {
+            background-color: #f44336;
+        }
+
+        .back-button:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <h1>Set Goal</h1>
+    <form method="POST">
+        <label for="goal_type">Goal Type:</label>
+        <select name="goal_type" id="goal_type" required>
+            <option value="">Select Goal Type</option>
+            <option value="Weight Loss">Weight Loss</option>
+            <option value="Muscle Gain">Muscle Gain</option>
+            <option value="Endurance">Endurance</option>
+            <option value="Flexibility">Flexibility</option>
+            <!-- Add more options as needed -->
+        </select><br>
+        <label for="target_value">Target Value:</label>
+        <input type="number" name="target_value" id="target_value" step="0.01" required><br>
+        <label for="start_date">Start Date:</label>
+        <input type="date" name="start_date" id="start_date" required><br>
+        <label for="end_date">End Date:</label>
+        <input type="date" name="end_date" id="end_date" required><br>
+        <button type="submit">Set Goal</button>
+    </form>
+    <a href="{{url_for('homepage')}}"><button>Back to homepage</button></a>
+    <!-- <button class="back-button" onclick="window.location.href='homepage.html'" href="{{url_for('homepage')}}">Back to Homepage</button> -->
+</body>
+</html>

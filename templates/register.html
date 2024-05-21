@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register page</title>
+    <style>
+        .container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+        }
+
+        .container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .container label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .container input[type="text"],
+        .container input[type="password"],
+        .container input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .container button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .container button:hover {
+            background-color: #45a049;
+        }
+
+        .links {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .links a {
+            text-decoration: none;
+            color: #333;
+            margin-right: 10px;
+        }
+
+        .no-account {
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+     <center><b>{{ message }}</b></center> 
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<body>
+    <div class="container">
+        <h2>Registration</h2>
+        <form method="POST">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="name" required>
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="email">Gender</label>
+            <select name="gender">
+                <option value="Male">Male </option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="email">Phone</label>
+            <input type="tel" id="email" name="phone" required>
+            
+            <button type="submit">Register</button>
+        </form>
+        
+        <div class="links">
+        <p><a href="{{url_for('login')}}">Already have an account?</a></p>
+
+        </div>
+    </div>
+</body>
+</html>
